@@ -1,0 +1,379 @@
+/**
+Theme Name: Test Theme
+Theme URI: https://localhost:8080/themes/testtheme/
+Author: Graham Daniel Robertson
+Author URI: https://127.0.0.1/
+Text Domain: testtheme
+Tags:
+	one-column, custom-colors, custom-menu, custom-logo, editor-style,
+	featured-images, full-site-editing, block-patterns, rtl-language-support,
+	sticky-post, threaded-comments, translation-ready, wide-blocks,
+	block-styles, style-variations, accessibility-ready, blog, portfolio, news
+*/
+
+:root {
+	/*
+	 * COLOURS
+	 * TO BE REVISED AND PLACED INTO SEPARATE PROJECT.
+	*/
+	--black:#111F18;
+
+	--white: #EBFBEF;
+	--off-white: #F7E9DE;
+
+	--cool-grey: #94C5A7;
+	--light-grey: #CCDDCC;
+	--grey: #B6C6AD;
+	--dark-grey:#333;
+
+	--blue: #559999;
+	--light-blue: lightseagreen;
+	/* --dark-blue: #164F57; */
+
+	--light-green: #CCD878;
+	--green: #5FAB8F;
+	--dark-green: #005701;
+
+	/* --red: #C93120; */
+	/* --bright-red: #FF2255; */
+	/**/
+	/* --light-pink: #EAB090; */
+	/* --pink: #E27777; */
+	/**/
+	/* --hilite: #CA054D; */
+	/**/
+	/* --light-purple: #AE567D; */
+	/* --purple: #724B80; */
+	/* --violet: #1B0D33; */
+	/**/
+	/* --yellow: #E6D53F; */
+	/* --rich-yellow: #FBC00E; */
+	/* --orange: #EC7B00; */
+	/* --rich-orange: #ED6921; */
+	/**/
+	/* --light-brown: #99896A; */
+	/* --brown: #290D00;	 */
+
+	/*
+	 * SEMANTIC COLOURS
+	 * 
+	 */
+	--bg-color: var(--off-white);
+	--text-color: var(--dark-grey);
+
+	--link-color: var(--light-blue);
+	
+	--btn-color: var(--white);
+	--btn-bg-color: var(--light-blue);
+
+	--section-bg-color: var(--dark-green);
+
+}
+
+html {
+	box-sizing: border-box;
+	margin:0;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	outline: none;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+
+	font-family: Ubuntu, Trebuchet, Helvetica, Arial, sans-serif;
+
+	padding: 0;
+	margin: 0;
+
+	width:100%;
+	min-height: 100vh;
+}
+
+div.wp-site-blocks {
+	display:flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	min-height: 100vh;
+}
+
+div.wp-site-blocks > div.wp-block-template-part {
+	flex-grow: 0;
+	margin: 0 !important;
+}
+
+div.wp-site-blocks > main {
+	/* background-image: url( */
+	/* 	/wp-content/themes/testtheme/assets/img/checkerboard.png */
+	/* ); */
+	/* background-repeat: no-repeat; */
+	/* background-position: 0 800px; */
+	flex-grow: 3;
+	margin: 0 !important;
+}
+
+div.wp-site-blocks > div.wp-block-template-part > header,
+div.wp-site-blocks > main,
+div.wp-site-blocks > div.wp-block-template-part > footer {
+	padding:1em 1em;
+}
+
+div.wp-site-blocks > div.wp-block-template-part > header,
+div.wp-site-blocks > div.wp-block-template-part > footer {
+	color: var(--off-white);
+	background-color: var(--section-bg-color);
+}
+
+div.wp-site-blocks > div.wp-block-template-part > header {
+	display:flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	gap:1em;
+}
+
+div.wp-site-blocks >
+div.wp-block-template-part >
+header >
+h1 {
+	font-size: 3em;
+	margin:0;
+}
+
+div.wp-site-blocks >
+div.wp-block-template-part >
+header >
+img {
+	height: 3em;
+}
+
+.wrapper {
+	margin:0 auto;
+	max-width:960px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 1.25em 0;
+  /* font-style: italic; */
+}
+
+h1 {
+	font-size: 2.25em;
+}
+
+h2 {
+	font-size: 1.8125em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h4 {
+	font-size: 1.6125em;
+}
+
+h5 {
+	font-size: 1.5em;
+}
+
+h6 {
+	font-size: 1.48125em;
+}
+
+hr {
+	margin: 3em;
+}
+
+p {
+	line-height: 2;
+	margin: 1.75em 0;
+}
+
+blockquote {
+	font-size: 2em;
+	font-style: italic;
+	line-height: 1.5;
+	margin: 3em 1em;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.btn,
+button {
+	font-size: 1.25em;
+	border-radius: 0.25em;
+	padding: 0.625em 0.75em;
+}
+
+a.btn,
+button,
+menu.paginator label {
+	display: inline-block;
+	
+	color: var(--btn-color);
+	background-color: var(--btn-bg-color);
+	font-weight: bold;
+	text-align: center;
+}
+
+menu.paginator label {
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	line-height: 2;
+}
+
+a.btn:hover,
+button:hover,
+menu.paginator label:hover {
+	cursor: pointer;
+	text-decoration: none;
+	background-color: var(--dark-green);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	max-height: 15em;
+}
+
+nav {
+	margin: 0px;
+}
+
+nav a {
+	display: block;
+	margin: 1em auto;
+}
+
+section {
+	margin: 4em 0;
+}
+
+p:first-child,
+section:first-child {
+	margin-top: 0;
+}
+
+p:last-child,
+section:last-child {
+	margin-bottom: 0;
+}
+
+.snippet h1 {
+	font-size: 1.75em;
+}
+
+ul.slideshow,
+ol.slideshow,
+menu.paginator {
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+
+menu.paginator {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1em;
+}
+
+section.hero {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: stretch;
+	align-items: stretch;
+	gap: 2em;
+	height: 66vh;
+}
+
+section.hero .snippet h1 {
+	font-size: 2em;
+}
+
+section.hero .slideshow {
+	position: relative;
+	flex-grow: 3;
+	overflow: hidden;
+}
+
+section.hero .slideshow img {
+	max-height: none;
+}
+
+section.hero .paginator {
+	flex-grow: 0;
+}
+
+section.hero .slideshow li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+section.hero .slideshow article {
+	display: none;
+}
+
+section.hero .slideshow li input[type="radio"] {
+	display: none;
+}
+
+section.hero .slideshow li input[type="radio"]:checked + article {
+	display: block;
+}
+
+section.function-hall .content {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 2em;
+}
+
+section.function-hall picture {
+	flex-basis: 30%;
+}
+ 
+section.function-hall .description {
+	flex-basis: 60%;
+}
+
+section.news ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap:2em;
+
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+
+section.news ul li {
+	flex-basis: 33%;
+}
