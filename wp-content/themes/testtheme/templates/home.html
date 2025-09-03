@@ -2,6 +2,16 @@
 
 <main class="home">
 	<div class="wrapper">
+		<input id="menu-toggle" type="checkbox" />
+		<nav>
+			<a href="#" class="selected">Home</a>
+			<a href="#">News</a>
+			<a href="#">Meetings</a>
+			<a href="#">Function Hall</a>
+			<a href="#">Gallery</a>
+
+			<label for="menu-toggle">✕</label>
+		</nav>
 		<section class="mission">
 			<blockquote cite="">
 				Miscasts Louis's rotundas golf petrel's Bk tushes.
@@ -24,10 +34,14 @@
 						</header>
 						<picture>
 							<img
-								src="https://lodge111.co.uk/Widows%20Sons%2002.jpg"
+								src="https://placehold.co/600x400/AAA/31344C"
 								alt="blah blah blah"
 							>
 						</picture>
+						<p>
+							This here is some placeholder text. No need to read just
+							glance and move on.
+						</p>
 					</article>
 				</li>
 				<li>
@@ -40,7 +54,7 @@
 						</header>
 						<picture>
 							<img
-								src="https://lodge111.co.uk/Hawick%20Lodge%20111%20group%20photograph%20small.JPG"
+								src="https://placehold.co/600x400/AAA/31344C"
 								alt="blah blah blah"
 							>
 						</picture>
@@ -65,7 +79,7 @@
 			<div class="content">
 				<picture>
 					<img
-						src="https://lodge111.co.uk/function%20room.JPG"
+						src="https://placehold.co/600x400/AAA/31344C"
 						alt="NO DESCRIPTION"
 					>
 				</picture>
@@ -84,6 +98,24 @@
 					</p>
 					<a href="#" class="btn">Book Now</a>
 				</div>
+			</div>
+		</section>
+		<!-- This will be a pattern... not sure how yet... -->
+		<hr />
+		<section class="meetings">
+			<header>
+				<h2>Annulled Pfizer cognomina.</h2>
+			</header>
+			<div class="content">	
+				<time datetime="2025-09-14T18:00+00:00">
+					<span class="month">JUL</span>
+					<span class="day">9</span>
+				</time>
+				<p>
+					Pennyweights gallop aphelia eats accentuating.
+					Lobachevsky's unskilled case's spokeswoman's concentrates
+					Corina's permanents Indio's indispositions counteraction.
+				</p>
 			</div>
 		</section>
 		<hr />
@@ -110,6 +142,7 @@
 							Pisces japanning liars Bray's songwriters
 							peroxiding animation's.
 						</p>
+						<a href="#">Read more &gt;</a>
 					</article>
 				</li>
 				<li>
@@ -121,7 +154,7 @@
 						</header>
 						<picture>
 							<img
-								src="https://lodge111.co.uk/Rosslyn%201.jpg"
+								src="https://placehold.co/600x400/AAA/31344C"
 								alt=""
 							>
 						</picture>
@@ -131,6 +164,7 @@
 							darkens.  Mobile's finale's Derick's
 							temperamental Wynn elongating indecency's.
 						</p>
+						<a href="#">Read more &gt;</a>
 					</article>
 				</li>
 				<li>
@@ -153,34 +187,44 @@
 							directorate's sulked shamrocks axe summarize
 							flakier...
 						</p>
+						<a href="#">Read more &gt;</a>
 					</article>
 				</li>
 			</ul>
 		</section>
-		<!-- This will be a pattern... not sure how yet... -->
-		<hr />
-		<section class="meetings">
-			<header>
-				<h2>Annulled Pfizer cognomina.</h2>
-				<time datetime="2025-09-14T18:00+00:00">
-					<span class="month">JUL</span>
-					<span class="day">9</span>
-				</time>
-			</header>
-			<p>
-				Pennyweights gallop aphelia eats accentuating.
-				Lobachevsky's unskilled case's spokeswoman's concentrates
-				Corina's permanents Indio's indispositions counteraction.
-			</p>
-		</section>
-		<hr />
-		<section class="gallery">
-			<ul class="slideshow">
-				<li>
 
-				</li>
-			</ul>
+		<hr />
+
+		<section class="location">
+			<header>
+				<h3>
+					The Hawick Lodge No. 111<br />
+					Masonic Hall,<br />
+					Commercial Road, Hawick.<br />
+					TD9 7AD
+				</h3>
+			</header>
+			<div id="map"></div>
+			<script type="text/javascript">
+				const LOCATION = [-2.785713, 55.427869];
+				var map = new maplibregl.Map({
+					container: 'map',
+					style: "https://tiles.openfreemap.org/styles/liberty", // https://demotiles.maplibre.org/style.json
+					center: LOCATION,
+					zoom: 18
+				});
+				const marker = new maplibregl.Marker()
+					.setLngLat(LOCATION)
+					.addTo(map);
+			</script>
 		</section>
+		<!--<section class="gallery">-->
+		<!--	<ul class="slideshow">-->
+		<!--		<li>-->
+		<!---->
+		<!--		</li>-->
+		<!--	</ul>-->
+		<!--</section>-->
 	</div>
 </main>
 

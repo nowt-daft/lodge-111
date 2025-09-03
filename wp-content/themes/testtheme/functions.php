@@ -12,6 +12,14 @@ add_action(
 			'theme-slug-style', 
 			get_stylesheet_uri()
 		);
+		wp_enqueue_style(
+			'map-style',
+			'https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.css'
+		);
+		wp_enqueue_script(
+			'map-script',
+			'https://unpkg.com/maplibre-gl@^5.6.1/dist/maplibre-gl.js'
+		);
 	}
 );
 
