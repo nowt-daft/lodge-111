@@ -488,6 +488,34 @@ section.meetings p {
 	aspect-ratio: 1.7;
 }
 
+.countdown {
+	font-family: monospace;
+	font-weight:bold;
+}
+
+.countdown span::after {
+	font-weight: normal;
+	padding-left: 5px;
+}
+
+.countdown span.days::after {
+	content: "days";
+}
+
+.countdown span.hours::after {
+	content: "hours";
+}
+
+.countdown span.minutes::after {
+	content: "minutes";
+
+}
+
+.countdown span.seconds::after {
+	content: "seconds";
+
+}
+
 @media screen and (max-width: 728px) {
 	section.news ul,
 	footer div.wrapper {
