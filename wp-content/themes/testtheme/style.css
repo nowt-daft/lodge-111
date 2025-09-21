@@ -423,7 +423,7 @@ section.news ul,
 footer div.wrapper {
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
+	/*justify-content: center;*/
 	align-items: flex-start;
 	gap:2em;
 

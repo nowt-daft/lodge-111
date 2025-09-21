@@ -2,270 +2,234 @@
 
 <main class="home">
 	<div class="wrapper">
+		<input id="menu-toggle" type="checkbox" />
+		<nav>
+			<a href="#" class="selected">Home</a>
+			<a href="#">News</a>
+			<a href="#">Meetings</a>
+			<a href="#">Function Hall</a>
+			<a href="#">Gallery</a>
+
+			<label for="menu-toggle">✕</label>
+		</nav>
 		<section class="mission">
 			<blockquote cite="">
-				Site under construction.
-			</blockquote>
-			<blockquote class="countdown">
-				<span class="days"></span>
-				<span class="hours"></span>
-				<span class="minutes"></span>
-				<span class="seconds"></span>
+				Welcome to the new Hawick Lodge No. 111 website.  Over the next few weeks,
+				news and upcoming events will be added as they come-up.  As we progress
+				through the new season, the site will evolve and update to reflect our many
+				meetings, charity contributions, and other functions.
+				<br />
+				<br />
+				Stay tuned!
+				<br />
+				The Webmaster
 			</blockquote>
 		</section>
-		<script type="module">
-			const [days, hours, minutes, seconds] = [...document.querySelectorAll('.countdown span')];
-			const release_date = new Date('2025-09-21T15:00');
-
-			const render = () => {
-				const now = new Date();
-
-				const diff = release_date - now;
-
-				const _seconds = diff / 1000;
-				const _minutes = _seconds / 60;
-				const _hours = _minutes / 60;
-				const _days = _hours / 24;
-
-				const rdays = Math.floor(_days);
-				const rhours = Math.floor(_hours - rdays * 24);
-				const rmins = Math.floor(_minutes - rdays * 24 * 60 - rhours * 60);
-				const rsecs = Math.floor(_seconds - rdays * 24 * 60 * 60 - rhours * 60 * 60 - rmins * 60);
-
-				days.textContent = rdays;
-				hours.textContent = rhours;
-				minutes.textContent = rmins;
-				seconds.textContent = rsecs;
-
-				requestAnimationFrame(render);
-			};
-
-			render();
-
-		</script>
-	<!--	<input id="menu-toggle" type="checkbox" />-->
-	<!--	<nav>-->
-	<!--		<a href="#" class="selected">Home</a>-->
-	<!--		<a href="#">News</a>-->
-	<!--		<a href="#">Meetings</a>-->
-	<!--		<a href="#">Function Hall</a>-->
-	<!--		<a href="#">Gallery</a>-->
-	<!---->
-	<!--		<label for="menu-toggle">✕</label>-->
-	<!--	</nav>-->
-	<!--	<section class="mission">-->
-	<!--		<blockquote cite="">-->
-	<!--			Miscasts Louis's rotundas golf petrel's Bk tushes.-->
-	<!--			Gipsy's merino's classy emceed substrata boleros gist-->
-	<!--			Tussaud transgressions.  Wooden Verde reformulate-->
-	<!--			posing pharmacies unshakable perfections regards.-->
-	<!--		</blockquote>-->
-	<!--	</section>-->
-	<!--	<hr />-->
-	<!--	<section class="hero">-->
-	<!--		<ul class="slideshow">-->
-	<!--			<li>-->
-	<!--				<input id="tout-0" type="radio" name="tout" checked />-->
-	<!--				<article class="snippet">-->
-	<!--					<header>-->
-	<!--						<h1>-->
-	<!--							Saturday 22nd June Visit from the-->
-	<!--							Widows Sons-->
-	<!--						</h1>-->
-	<!--					</header>-->
-	<!--					<picture>-->
-	<!--						<img-->
-	<!--							src="https://placehold.co/600x400/AAA/31344C"-->
-	<!--							alt="blah blah blah"-->
-	<!--						>-->
-	<!--					</picture>-->
-	<!--					<p>-->
-	<!--						This here is some placeholder text. No need to read just-->
-	<!--						glance and move on.-->
-	<!--					</p>-->
-	<!--				</article>-->
-	<!--			</li>-->
-	<!--			<li>-->
-	<!--				<input id="tout-1" type="radio" name="tout" />-->
-	<!--				<article class="snippet">-->
-	<!--					<header>-->
-	<!--						<h1>-->
-	<!--							250th Anniversary Re-dedication 25th August 2018-->
-	<!--						</h1>-->
-	<!--					</header>-->
-	<!--					<picture>-->
-	<!--						<img-->
-	<!--							src="https://placehold.co/600x400/AAA/31344C"-->
-	<!--							alt="blah blah blah"-->
-	<!--						>-->
-	<!--					</picture>-->
-	<!--				</article>-->
-	<!--			</li>-->
-	<!--		</ul>-->
-	<!--		<menu class="paginator">-->
-	<!--			<li>-->
-	<!--				<label for="tout-0">1</label>-->
-	<!--			</li>-->
-	<!--			<li>-->
-	<!--				<label for="tout-1">2</label>-->
-	<!--			</li>-->
-	<!--		</menu>-->
-	<!--	</section>-->
-	<!--	<hr />-->
-	<!--	<section class="function-hall">-->
-	<!--		<header>-->
-	<!--			<h2>Lodge Function Hall</h2>-->
-	<!--		</header>-->
-	<!---->
-	<!--		<div class="content">-->
-	<!--			<picture>-->
-	<!--				<img-->
-	<!--					src="https://placehold.co/600x400/AAA/31344C"-->
-	<!--					alt="NO DESCRIPTION"-->
-	<!--				>-->
-	<!--			</picture>-->
-	<!--			<div class="description">-->
-	<!--				<p>-->
-	<!--					Incited bruised foregrounded bevel excitement's-->
-	<!--					completer charlatan.  Skinhead musses Congress's-->
-	<!--					goalies abler mopeds Vazquez's PMS's redecorates.-->
-	<!--					Roach Madera's Castries coffer earnings's seventieth's.-->
-	<!--					Jonson inadvertence jaundice regressions allegiance's-->
-	<!--					demises catcalling professorships.  Hookworm crinkle's-->
-	<!--					circulates degenerate's confrère Nikon's.-->
-	<!--				</p>-->
-	<!--				<p>-->
-	<!--					Make your booking now!-->
-	<!--				</p>-->
-	<!--				<a href="#" class="btn">Book Now</a>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</section>-->
-	<!--	<hr />-->
-	<!--	<section class="meetings">-->
-	<!--		<header>-->
-	<!--			<h2>Annulled Pfizer cognomina.</h2>-->
-	<!--		</header>-->
-	<!--		<div class="content">	-->
-	<!--			<time datetime="2025-09-14T18:00+00:00">-->
-	<!--				<span class="month">JUL</span>-->
-	<!--				<span class="day">9</span>-->
-	<!--			</time>-->
-	<!--			<p>-->
-	<!--				Pennyweights gallop aphelia eats accentuating.-->
-	<!--				Lobachevsky's unskilled case's spokeswoman's concentrates-->
-	<!--				Corina's permanents Indio's indispositions counteraction.-->
-	<!--			</p>-->
-	<!--		</div>-->
-	<!--	</section>-->
-	<!--	<hr />-->
-	<!--	<section class="news">-->
-	<!--		<ul>-->
-	<!--			<li>-->
-	<!--				<article class="snippet">-->
-	<!--					<header>-->
-	<!--						<h1>-->
-	<!--							Ebert's drastic clangor's vengefully-->
-	<!--						</h1>-->
-	<!--					</header>-->
-	<!--					<picture>-->
-	<!--						<img-->
-	<!--							src="https://placehold.co/380x240/AAA/31343C"-->
-	<!--							alt=""-->
-	<!--						>-->
-	<!--					</picture>-->
-	<!--					<p>-->
-	<!--						Rubberneck's didactic spinal's quavers sahibs-->
-	<!--						underground's romance's clingy. Breakdown's-->
-	<!--						researching ancillaries MSG embargo's-->
-	<!--						storehouses Confederates least's.  Bettered-->
-	<!--						Pisces japanning liars Bray's songwriters-->
-	<!--						peroxiding animation's.-->
-	<!--					</p>-->
-	<!--					<a href="#">Read more &gt;</a>-->
-	<!--				</article>-->
-	<!--			</li>-->
-	<!--			<li>-->
-	<!--				<article class="snippet">-->
-	<!--					<header>-->
-	<!--						<h1>-->
-	<!--							McGuffey profess.-->
-	<!--						</h1>-->
-	<!--					</header>-->
-	<!--					<picture>-->
-	<!--						<img-->
-	<!--							src="https://placehold.co/600x400/AAA/31344C"-->
-	<!--							alt=""-->
-	<!--						>-->
-	<!--					</picture>-->
-	<!--					<p>-->
-	<!--						Polyethylene furbelow's sweeter spoonerism-->
-	<!--						Laredo cutlass Clemons's colonizer moderate-->
-	<!--						darkens.  Mobile's finale's Derick's-->
-	<!--						temperamental Wynn elongating indecency's.-->
-	<!--					</p>-->
-	<!--					<a href="#">Read more &gt;</a>-->
-	<!--				</article>-->
-	<!--			</li>-->
-	<!--			<li>-->
-	<!--				<article class="snippet">-->
-	<!--					<header>-->
-	<!--						<h1>-->
-	<!--							Uniquest incubus's Gloucester's ugh-->
-	<!--							anticipatory-->
-	<!--						</h1>-->
-	<!--					</header>-->
-	<!--					<picture>-->
-	<!--						<img-->
-	<!--							src="https://placehold.co/600x400/AAA/31344C"-->
-	<!--							alt=""-->
-	<!--						>-->
-	<!--					</picture>-->
-	<!--					<p>-->
-	<!--						Sepals calibrates physics's Uighur McLaughlin.-->
-	<!--						Concierge's ciders idiom's moraines nurserymen-->
-	<!--						directorate's sulked shamrocks axe summarize-->
-	<!--						flakier...-->
-	<!--					</p>-->
-	<!--					<a href="#">Read more &gt;</a>-->
-	<!--				</article>-->
-	<!--			</li>-->
-	<!--		</ul>-->
-	<!--	</section>-->
-	<!---->
-	<!--	<hr />-->
-	<!---->
-	<!--	<section class="location">-->
-	<!--		<header>-->
-	<!--			<h3>-->
-	<!--				The Hawick Lodge No. 111<br />-->
-	<!--				Masonic Hall,<br />-->
-	<!--				Commercial Road, Hawick.<br />-->
-	<!--				TD9 7AD-->
-	<!--			</h3>-->
-	<!--		</header>-->
-	<!--		<div id="map"></div>-->
-	<!--		<script type="text/javascript">-->
-	<!--			const LOCATION = [-2.785713, 55.427869];-->
-	<!--			var map = new maplibregl.Map({-->
-	<!--				container: 'map',-->
-	<!--				style: "https://tiles.openfreemap.org/styles/liberty", // https://demotiles.maplibre.org/style.json-->
-	<!--				center: LOCATION,-->
-	<!--				zoom: 18-->
-	<!--			});-->
-	<!--			const marker = new maplibregl.Marker()-->
-	<!--				.setLngLat(LOCATION)-->
-	<!--				.addTo(map);-->
-	<!--		</script>-->
-	<!--	</section>-->
-		<!--<section class="gallery">-->
+		<hr />
+		<!--<section class="hero">-->
 		<!--	<ul class="slideshow">-->
 		<!--		<li>-->
+		<!--			<input id="tout-0" type="radio" name="tout" checked />-->
+		<!--			<article class="snippet">-->
+		<!--				<header>-->
+		<!--					<h1>-->
+		<!--						Saturday 22nd June Visit from the-->
+		<!--						Widows Sons-->
+		<!--					</h1>-->
+		<!--				</header>-->
+		<!--				<picture>-->
+		<!--					<img-->
+		<!--						src="https://placehold.co/600x400/AAA/31344C"-->
+		<!--						alt="blah blah blah"-->
+		<!--					>-->
+		<!--				</picture>-->
+		<!--				<p>-->
+		<!--					This here is some placeholder text. No need to read just-->
+		<!--					glance and move on.-->
+		<!--				</p>-->
+		<!--			</article>-->
+		<!--		</li>-->
+		<!--		<li>-->
+		<!--			<input id="tout-1" type="radio" name="tout" />-->
+		<!--			<article class="snippet">-->
+		<!--				<header>-->
+		<!--					<h1>-->
+		<!--						250th Anniversary Re-dedication 25th August 2018-->
+		<!--					</h1>-->
+		<!--				</header>-->
+		<!--				<picture>-->
+		<!--					<img-->
+		<!--						src="https://placehold.co/600x400/AAA/31344C"-->
+		<!--						alt="blah blah blah"-->
+		<!--					>-->
+		<!--				</picture>-->
+		<!--			</article>-->
+		<!--		</li>-->
+		<!--	</ul>-->
+		<!--	<menu class="paginator">-->
+		<!--		<li>-->
+		<!--			<label for="tout-0">1</label>-->
+		<!--		</li>-->
+		<!--		<li>-->
+		<!--			<label for="tout-1">2</label>-->
+		<!--		</li>-->
+		<!--	</menu>-->
+		<!--</section>-->
+		<!--<hr />-->
+		<!--<section class="function-hall">-->
+		<!--	<header>-->
+		<!--		<h2>Lodge Function Hall</h2>-->
+		<!--	</header>-->
 		<!---->
+		<!--	<div class="content">-->
+		<!--		<picture>-->
+		<!--			<img-->
+		<!--				src="https://placehold.co/600x400/AAA/31344C"-->
+		<!--				alt="NO DESCRIPTION"-->
+		<!--			>-->
+		<!--		</picture>-->
+		<!--		<div class="description">-->
+		<!--			<p>-->
+		<!--				Incited bruised foregrounded bevel excitement's-->
+		<!--				completer charlatan.  Skinhead musses Congress's-->
+		<!--				goalies abler mopeds Vazquez's PMS's redecorates.-->
+		<!--				Roach Madera's Castries coffer earnings's seventieth's.-->
+		<!--				Jonson inadvertence jaundice regressions allegiance's-->
+		<!--				demises catcalling professorships.  Hookworm crinkle's-->
+		<!--				circulates degenerate's confrère Nikon's.-->
+		<!--			</p>-->
+		<!--			<p>-->
+		<!--				Make your booking now!-->
+		<!--			</p>-->
+		<!--			<a href="#" class="btn">Book Now</a>-->
+		<!--		</div>-->
+		<!--	</div>-->
+		<!--</section>-->
+		<!--<hr />-->
+		<!--<section class="meetings">-->
+		<!--	<header>-->
+		<!--		<h2>Annulled Pfizer cognomina.</h2>-->
+		<!--	</header>-->
+		<!--	<div class="content">	-->
+		<!--		<time datetime="2025-09-14T18:00+00:00">-->
+		<!--			<span class="month">JUL</span>-->
+		<!--			<span class="day">9</span>-->
+		<!--		</time>-->
+		<!--		<p>-->
+		<!--			Pennyweights gallop aphelia eats accentuating.-->
+		<!--			Lobachevsky's unskilled case's spokeswoman's concentrates-->
+		<!--			Corina's permanents Indio's indispositions counteraction.-->
+		<!--		</p>-->
+		<!--	</div>-->
+		<!--</section>-->
+		<!--<hr />-->
+		<!--<section class="news">-->
+		<!--	<ul>-->
+		<!--		<li>-->
+		<!--			<article class="snippet">-->
+		<!--				<header>-->
+		<!--					<h1>-->
+		<!--						Ebert's drastic clangor's vengefully-->
+		<!--					</h1>-->
+		<!--				</header>-->
+		<!--				<picture>-->
+		<!--					<img-->
+		<!--						src="https://placehold.co/380x240/AAA/31343C"-->
+		<!--						alt=""-->
+		<!--					>-->
+		<!--				</picture>-->
+		<!--				<p>-->
+		<!--					Rubberneck's didactic spinal's quavers sahibs-->
+		<!--					underground's romance's clingy. Breakdown's-->
+		<!--					researching ancillaries MSG embargo's-->
+		<!--					storehouses Confederates least's.  Bettered-->
+		<!--					Pisces japanning liars Bray's songwriters-->
+		<!--					peroxiding animation's.-->
+		<!--				</p>-->
+		<!--				<a href="#">Read more &gt;</a>-->
+		<!--			</article>-->
+		<!--		</li>-->
+		<!--		<li>-->
+		<!--			<article class="snippet">-->
+		<!--				<header>-->
+		<!--					<h1>-->
+		<!--						McGuffey profess.-->
+		<!--					</h1>-->
+		<!--				</header>-->
+		<!--				<picture>-->
+		<!--					<img-->
+		<!--						src="https://placehold.co/600x400/AAA/31344C"-->
+		<!--						alt=""-->
+		<!--					>-->
+		<!--				</picture>-->
+		<!--				<p>-->
+		<!--					Polyethylene furbelow's sweeter spoonerism-->
+		<!--					Laredo cutlass Clemons's colonizer moderate-->
+		<!--					darkens.  Mobile's finale's Derick's-->
+		<!--					temperamental Wynn elongating indecency's.-->
+		<!--				</p>-->
+		<!--				<a href="#">Read more &gt;</a>-->
+		<!--			</article>-->
+		<!--		</li>-->
+		<!--		<li>-->
+		<!--			<article class="snippet">-->
+		<!--				<header>-->
+		<!--					<h1>-->
+		<!--						Uniquest incubus's Gloucester's ugh-->
+		<!--						anticipatory-->
+		<!--					</h1>-->
+		<!--				</header>-->
+		<!--				<picture>-->
+		<!--					<img-->
+		<!--						src="https://placehold.co/600x400/AAA/31344C"-->
+		<!--						alt=""-->
+		<!--					>-->
+		<!--				</picture>-->
+		<!--				<p>-->
+		<!--					Sepals calibrates physics's Uighur McLaughlin.-->
+		<!--					Concierge's ciders idiom's moraines nurserymen-->
+		<!--					directorate's sulked shamrocks axe summarize-->
+		<!--					flakier...-->
+		<!--				</p>-->
+		<!--				<a href="#">Read more &gt;</a>-->
+		<!--			</article>-->
 		<!--		</li>-->
 		<!--	</ul>-->
 		<!--</section>-->
-	<!--</div>-->
+		<!---->
+		<!--<hr />-->
+
+		<section class="location">
+			<header>
+				<h3>
+					The Hawick Lodge No. 111<br />
+					Masonic Hall,<br />
+					Commercial Road, Hawick.<br />
+					TD9 7AD
+				</h3>
+			</header>
+			<div id="map"></div>
+			<script type="text/javascript">
+				const LOCATION = [-2.785713, 55.427869];
+				var map = new maplibregl.Map({
+					container: 'map',
+					style: "https://tiles.openfreemap.org/styles/liberty", // https://demotiles.maplibre.org/style.json
+					center: LOCATION,
+					zoom: 18
+				});
+				const marker = new maplibregl.Marker()
+					.setLngLat(LOCATION)
+					.addTo(map);
+			</script>
+		</section>
+		<section class="gallery">
+			<ul class="slideshow">
+				<li>
+
+				</li>
+			</ul>
+		</section>
+	</div>
 </main>
 
 <!-- wp:template-part {"slug":"footer"} /-->
