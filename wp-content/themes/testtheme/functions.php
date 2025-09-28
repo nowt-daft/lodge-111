@@ -10,7 +10,7 @@ add_action(
 	function() {
 		wp_enqueue_style(
 			'theme-slug-style', 
-			get_stylesheet_uri()
+			get_stylesheet_uri() . "?cache_kill=" . rand()
 		);
 		wp_enqueue_style(
 			'map-style',

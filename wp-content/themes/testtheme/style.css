@@ -432,9 +432,17 @@ footer div.wrapper {
 	margin: 0;
 }
 
+section.news ul {
+	justify-content: center;
+}
+
 section.news ul li,
 footer div.wrapper address {
 	flex-basis: 33%;
+}
+
+section.news h1 {
+	margin-top: 0 !important;
 }
 
 section.meetings {
