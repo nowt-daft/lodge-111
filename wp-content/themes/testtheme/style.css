@@ -420,6 +420,7 @@ section.function-hall .description {
 }
 
 section.news ul,
+section.meetings ul,
 footer div.wrapper {
 	display: flex;
 	flex-flow: row nowrap;
@@ -448,6 +449,10 @@ section.news h1 {
 section.meetings {
 	margin-left: 3em;
 	margin-right: 3em;
+}
+
+section.meetings ul li {
+	flex: 1 1 33%;
 }
 
 section.meetings time {
