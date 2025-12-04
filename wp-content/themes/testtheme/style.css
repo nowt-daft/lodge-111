@@ -420,8 +420,7 @@ section.function-hall .description {
 }
 
 section.news ul,
-section.meetings ul,
-footer div.wrapper {
+section.meetings ul {
 	display: flex;
 	flex-flow: row wrap;
 	/*justify-content: center;*/
@@ -437,8 +436,7 @@ section.news ul {
 	justify-content: center;
 }
 
-section.news ul li,
-footer div.wrapper address {
+section.news ul li {
 	flex-basis: 33%;
 }
 
