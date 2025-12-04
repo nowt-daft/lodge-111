@@ -466,6 +466,7 @@ section.meetings time {
 	justify-content: stretch;
 	aspect-ratio: 1;
 	flex: 1 1 15%;
+	max-width: 120px;
 }
 
 section.meetings time span {
