@@ -218,6 +218,12 @@ address {
 	margin: 1.75em 0;
 }
 
+address a,
+menu a,
+nav a {
+	display: block;
+}
+
 blockquote {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 2em;
