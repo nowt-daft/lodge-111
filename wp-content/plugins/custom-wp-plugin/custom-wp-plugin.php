@@ -162,6 +162,21 @@ add_action(
 				'rewrite'       => array('slug' => 'functions')
 			)
 		);
+		register_post_type(
+			'history',
+			array(
+				'labels'        => generate_post_labels(
+					'History',
+					'History'
+				),
+				'public'        => true,
+				'supports'      => array('editor'),
+				'menu_icon'     => 'dashicons-book',
+				'menu_position' => 0,
+				'rewrite'       => array('slug' => 'history'),
+				'has_archive'   => true
+			)
+		);
 	},
 	10
 );
