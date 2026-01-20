@@ -108,18 +108,16 @@ div.wp-site-blocks > div.wp-block-template-part {
 	margin: 0 !important;
 }
 
-div.wp-site-blocks > main {
-	/* background-image: url( */
-	/* 	/wp-content/themes/testtheme/assets/img/checkerboard.png */
-	/* ); */
-	/* background-repeat: no-repeat; */
-	/* background-position: 0 800px; */
-	flex-grow: 3;
-	margin: 0 !important;
+div.wp-site-blocks > div.wp-block-template-part > header {
+	padding: 1em 1em 1em 4.5em;
 }
 
-div.wp-site-blocks > div.wp-block-template-part > header,
-div.wp-site-blocks > main,
+div.wp-site-blocks > main {
+	flex-grow: 3;
+	margin: 0 !important;
+	padding: 1em 1em 4em;
+}
+
 div.wp-site-blocks > div.wp-block-template-part > footer {
 	padding:1em 1em;
 }
@@ -142,7 +140,7 @@ div.wp-site-blocks >
 div.wp-block-template-part >
 header >
 h1 {
-	font-size: 3em;
+	font-size: clamp(1.8125em, 6vw, 3em);
 	margin:0;
 }
 
@@ -162,8 +160,9 @@ header label {
 
 .wrapper {
 	position: relative;
-	margin:0 auto;
-	max-width:960px;
+	margin: 0 auto;
+	padding: 1px;
+	max-width: 960px;
 }
 
 footer {
@@ -502,37 +501,48 @@ section.meetings p {
 	margin-top: 1em;
 }
 
+article.history {
+	counter-reset: chapter;
+}
+
+article.history > section.chapter {
+	counter-increment: chapter;
+}
+
+/* article.history > section.chapter > h1::before { */
+/* 	content: counter(chapter) ". "; */
+/* } */
+
 #map {
 	aspect-ratio: 1.7;
 }
 
-.countdown {
-	font-family: monospace;
-	font-weight:bold;
-}
-
-.countdown span::after {
-	font-weight: normal;
-	padding-left: 5px;
-}
-
-.countdown span.days::after {
-	content: "days";
-}
-
-.countdown span.hours::after {
-	content: "hours";
-}
-
-.countdown span.minutes::after {
-	content: "minutes";
-
-}
-
-.countdown span.seconds::after {
-	content: "seconds";
-
-}
+/* .countdown { */
+/* 	font-family: monospace; */
+/* 	font-weight:bold; */
+/* } */
+/**/
+/* .countdown span::after { */
+/* 	font-weight: normal; */
+/* 	padding-left: 5px; */
+/* } */
+/**/
+/* .countdown span.days::after { */
+/* 	content: "days"; */
+/* } */
+/**/
+/* .countdown span.hours::after { */
+/* 	content: "hours"; */
+/* } */
+/**/
+/* .countdown span.minutes::after { */
+/* 	content: "minutes"; */
+/* } */
+/**/
+/* .countdown span.seconds::after { */
+/* 	content: "seconds"; */
+/**/
+/* } */
 
 @media screen and (max-width: 728px) {
 	section.news ul,

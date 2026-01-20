@@ -170,7 +170,7 @@ add_action(
 					'History'
 				),
 				'public'        => true,
-				'supports'      => array('editor'),
+				'supports'      => array('title', 'editor'),
 				'menu_icon'     => 'dashicons-book',
 				'menu_position' => 0,
 				'rewrite'       => array('slug' => 'history'),
@@ -298,6 +298,27 @@ add_action(
 			'side',
 			'high'
 		);
+		add_meta_box(
+			'chapter_order',
+			'Chapter Display Order Number',
+			function ($post) {
+				$data = get_data($post);
+				?>
+					<input
+						name="history_chapter_order"
+						type="number"
+						value="<?php
+							echo $data['history_chapter_order'] ?? '0'
+						?>"
+						min="0"
+						step="1"
+					/>
+				<?php
+			},
+			'history',
+			'side',
+			'high'
+		);
 	}
 );
 
@@ -359,5 +380,22 @@ add_action(
 				$content
 			);
 		}
+	}
+);
+add_action(
+	'save_post',
+	function($id) {
+		$type = get_post_type();
+		if (
+			$type != 'history'
+		) return;
+
+		$content = $_POST['history_chapter_order'];
+
+		update_post_meta(
+			$id,
+			'history_chapter_order',
+			$content
+		);
 	}
 );
