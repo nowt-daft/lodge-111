@@ -279,10 +279,8 @@ img {
 	max-height: 15em;
 }
 
-nav {
-	display: none;
-	margin: 0px;
-}
+/* nav { */
+/* } */
 
 nav a {
 	display: block;
@@ -294,11 +292,16 @@ nav a {
 }
 
 #menu-toggle + nav {
+	display: none;
 	position: absolute;
+	
 	top: 0;
 	left: 0;
+	
 	width: 100%;
 	height: 100%;
+	margin: 0px;
+	
 	z-index: 100;
 
 	font-size: 2em;
@@ -495,7 +498,7 @@ section.meetings time span.day {
 	flex-grow: 2;
 }
 
-section.meetings p {
+section.meetings > p {
 	flex: 3 1 60%;
 	font-size: 1.125em;
 	margin-top: 1em;
@@ -512,6 +515,29 @@ article.history > section.chapter {
 /* article.history > section.chapter > h1::before { */
 /* 	content: counter(chapter) ". "; */
 /* } */
+
+article.history > ul {
+	list-style: none;
+}
+
+article.history-chapter > nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+article.history-chapter > nav > a {
+	margin: 1em 0 0;
+}
+
+article.history-chapter > nav > a.prev {
+	margin: 1em auto 0 0;
+}
+
+article.history-chapter > nav > a.next {
+	margin: 1em 0 0 auto;
+}
 
 #map {
 	aspect-ratio: 1.7;
