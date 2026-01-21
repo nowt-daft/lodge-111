@@ -192,6 +192,21 @@ add_action(
 				'has_archive'   => true
 			)
 		);
+		register_post_type(
+			'masters',
+			array(
+				'labels'        => generate_post_labels(
+					'Past Master',
+					'Past Masters'
+				),
+				'public'        => true,
+				'supports'      => array('title', 'editor'),
+				'menu_icon'     => 'dashicons-businessman',
+				'menu_position' => 0,
+				'rewrite'       => array('slug' => 'past-masters'),
+				'has_archive'   => true
+			)
+		);
 	},
 	10
 );
@@ -381,6 +396,34 @@ add_action(
 			'side',
 			'high'
 		);
+		add_meta_box(
+			'masters_image',
+			'Master Image',
+			function($post) {
+				wp_nonce_field(
+					plugin_basename(__FILE__),
+					'masters_image_nonce'
+				);
+				$file = get_post_meta(
+					$post->ID,
+					'masters_image',
+					true
+				);
+				$file = empty($file) ? '' : $file['url'];
+				?>
+				<?php if (!empty($file)) : ?>
+					<img src="<?php echo $file ?>" />
+				<?php endif ?>
+				<input
+					name="masters_image"
+					type="file"
+				/>
+				<?php
+			},
+			'masters',
+			'side',
+			'high'
+		);
 	}
 );
 
@@ -392,7 +435,8 @@ add_action(
 		if (
 			$type != 'news' &&
 			$type != 'announcements' &&
-			$type != 'functions'
+			$type != 'functions' &&
+			$type != 'masters'
 		) return;
 
 		upload_image($id, $type . '_image');
