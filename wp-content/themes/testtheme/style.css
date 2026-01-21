@@ -539,6 +539,58 @@ article.history-chapter > nav > a.next {
 	margin: 1em 0 0 auto;
 }
 
+article.office > ul {
+	/* display: flex; */
+	/* gap: 10px; */
+
+	padding: 0;
+	margin: 0;
+	
+	list-style: none;
+}
+
+article.office > ul > li {
+	margin: 1em 0;
+}
+
+article.office > ul > li:last-child > hr {
+	display: none;
+}
+
+article.bearer {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 1em;
+}
+
+article.bearer > header {
+	order: 2;
+}
+
+article.bearer > header > h1,
+article.bearer > header > h2 {
+	margin: 0;
+}
+
+article.bearer > header > h2 {
+	opacity: 0.8;
+}
+
+article.bearer > section.photo {
+	order: 1;
+	width: clamp(140px, 20%, 280px);
+	margin: 0;
+	aspect-ratio: 1;
+}
+
+article.bearer > section.photo > img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
 #map {
 	aspect-ratio: 1.7;
 }

@@ -177,6 +177,21 @@ add_action(
 				'has_archive'   => true
 			)
 		);
+		register_post_type(
+			'office_bearers',
+			array(
+				'labels'        => generate_post_labels(
+					'Office Bearer',
+					'Office Bearers'
+				),
+				'public'        => true,
+				'supports'      => array('title'),
+				'menu_icon'     => 'dashicons-id',
+				'menu_position' => 0,
+				'rewrite'       => array('slug' => 'office-bearers'),
+				'has_archive'   => true
+			)
+		);
 	},
 	10
 );
@@ -319,6 +334,53 @@ add_action(
 			'side',
 			'high'
 		);
+		add_meta_box(
+			'office_bearers_name',
+			'Office Bearer Full Name',
+			function ($post) {
+				$data = get_data($post);
+				?>
+					<input
+						name="office_bearers_name"
+						type="text"
+						value="<?php
+							echo $data['office_bearers_name'] ?? 'John Doe'
+						?>"
+					/>
+				<?php
+			},
+			'office_bearers',
+			'normal',
+			'high'
+		);
+		add_meta_box(
+			'office_bearers_image',
+			'Office Bearer Image',
+			function($post) {
+				wp_nonce_field(
+					plugin_basename(__FILE__),
+					'office_bearers_image_nonce'
+				);
+				$file = get_post_meta(
+					$post->ID,
+					'office_bearers_image',
+					true
+				);
+				$file = empty($file) ? '' : $file['url'];
+				?>
+				<?php if (!empty($file)) : ?>
+					<img src="<?php echo $file ?>" />
+				<?php endif ?>
+				<input
+					name="office_bearers_image"
+					type="file"
+				/>
+				<?php
+			},
+			'office_bearers',
+			'side',
+			'high'
+		);
 	}
 );
 
@@ -396,6 +458,25 @@ add_action(
 			$id,
 			'history_chapter_order',
 			$content
+		);
+	}
+);
+add_action(
+	'save_post',
+	function($id) {
+		$type = get_post_type();
+		if (
+			$type != 'office_bearers'
+		) return;
+
+		update_post_meta(
+			$id,
+			$type . "_name",
+			$_POST[$type . "_name"]
+		);
+		upload_image(
+			$id,
+			$type . '_image'
 		);
 	}
 );
