@@ -24,20 +24,22 @@ if (empty($posts))
 			<article class="bearer">
 				<header>
 					<h1><?php echo $post->post_title ?></h1>
-					<p><?php echo $post->post_content ?></p>
+					<h2><?php
+						echo explode('-', get_post_meta($post->ID, 'masters_start_date', true))[0]
+					?></h2>
 				</header>
+				<?php
+					$file = get_post_meta(
+						$post->ID,
+						'masters_image',
+						true
+					);
+					if (!empty($file)) :
+				?>
 				<section class="photo">
-					<img src="<?php
-						$file = get_post_meta(
-							$post->ID,
-							'masters_image',
-							true
-						);
-						echo empty($file) ?
-							'/wp-content/themes/testtheme/assets/img/placeholder.jpg' :
-							$file['url']
-					?>" />
+					<img src="<?php echo $file['url'] ?>" />
 				</section>
+				<?php endif ?>
 			</article>
 			<hr />
 		</li>

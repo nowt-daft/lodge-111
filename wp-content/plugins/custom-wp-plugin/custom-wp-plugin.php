@@ -200,7 +200,7 @@ add_action(
 					'Past Masters'
 				),
 				'public'        => true,
-				'supports'      => array('title', 'editor'),
+				'supports'      => array('title'),
 				'menu_icon'     => 'dashicons-businessman',
 				'menu_position' => 0,
 				'rewrite'       => array('slug' => 'past-masters'),
@@ -424,6 +424,40 @@ add_action(
 			'side',
 			'high'
 		);
+		add_meta_box(
+			'masters_start_date',
+			'Start Date',
+			function($post) {
+				$data = get_data($post);
+				?>
+				<input
+					name="masters_start_date"
+					type="date"
+					value="<?php echo $data['masters_start_date'] ?? '' ?>"
+				/>
+				<?php
+			},
+			'masters',
+			'normal',
+			'high'
+		);
+		add_meta_box(
+			'masters_end_date',
+			'End Date',
+			function($post) {
+				$data = get_data($post);
+				?>
+				<input
+					name="masters_end_date"
+					type="date"
+					value="<?php echo $data['masters_end_date'] ?? '' ?>"
+				/>
+				<?php
+			},
+			'masters',
+			'normal',
+			'high'
+		);
 	}
 );
 
@@ -521,6 +555,26 @@ add_action(
 		upload_image(
 			$id,
 			$type . '_image'
+		);
+	}
+);
+add_action(
+	'save_post',
+	function($id) {
+		$type = get_post_type();
+		if (
+			$type != 'masters'
+		) return;
+
+		update_post_meta(
+			$id,
+			$type . "_start_date",
+			$_POST[$type . "_start_date"]
+		);
+		update_post_meta(
+			$id,
+			$type . "_end_date",
+			$_POST[$type . "_end_date"]
 		);
 	}
 );
