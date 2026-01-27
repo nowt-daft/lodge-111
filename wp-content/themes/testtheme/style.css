@@ -540,8 +540,11 @@ article.history-chapter > nav > a.next {
 }
 
 article.office > ul {
-	/* display: flex; */
-	/* gap: 10px; */
+	display: flex;
+	flex-flow: row wrap;
+	gap: 10px;
+	justify-content: flex-start;
+	align-items: stretch;
 
 	padding: 0;
 	margin: 0;
@@ -550,10 +553,18 @@ article.office > ul {
 }
 
 article.office > ul > li {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 0;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	flex: 1 1 320px;
 	margin: 1em 0;
 }
 
 article.office > ul > li:last-child > hr {
+	flex: 0 0 1px;
 	display: none;
 }
 
@@ -569,12 +580,17 @@ article.bearer > header {
 	order: 2;
 }
 
+article.bearer > header > h1 {
+	font-size: 1.75em;
+}
+
 article.bearer > header > h1,
 article.bearer > header > h2 {
 	margin: 0;
 }
 
 article.bearer > header > h2 {
+	font-size: 1.25em;
 	opacity: 0.8;
 }
 
