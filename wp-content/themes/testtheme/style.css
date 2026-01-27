@@ -419,11 +419,13 @@ section.hero .slideshow li input[type="radio"]:checked + article {
 	gap: 2em;
 }
 
-.content > *:first-child + p {
-	margin-top: 0;
+.content > *:first-child + p,
+.content > time:first-child + header > * {
+	margin: 0 0 0.6125em;
 }
 
-.content > time:first-child + p {
+.content > time:first-child + p,
+.content > time:first-child + header {
 	flex: 1 1 calc(100px - 90px - 2em);
 }
 

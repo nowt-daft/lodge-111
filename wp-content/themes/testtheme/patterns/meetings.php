@@ -46,9 +46,6 @@ if (empty($posts))
 					$date_parts = explode('-', $date);
 				?>
 
-				<header>
-					<h2><?php echo $post->post_title ?></h2>
-				</header>
 				<div class="content">	
 					<time
 						datetime="<?php echo $date ?>T<?php $time ?>"
@@ -60,9 +57,12 @@ if (empty($posts))
 							<?php echo $date_parts[2] ?>
 						</span>
 					</time>
-					<p>
-						<?php echo $post->post_content ?>
-					</p>
+					<header>
+						<h2><?php echo $post->post_title ?></h2>
+						<p>
+							<?php echo $post->post_content ?>
+						</p>
+					</header>
 				</div>
 
 			</article>
