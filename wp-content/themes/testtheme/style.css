@@ -87,6 +87,7 @@ body {
 	color: var(--text-color);
 
 	font-family: Ubuntu, Trebuchet, Helvetica, Arial, sans-serif;
+	font-size: 12pt;
 
 	padding: 0;
 	margin: 0;
@@ -185,27 +186,27 @@ h6 {
 }
 
 h1 {
-	font-size: 2.25em;
+	font-size: 2.125em;
 }
 
 h2 {
-	font-size: 1.8125em;
-}
-
-h3 {
-	font-size: 1.75em;
-}
-
-h4 {
 	font-size: 1.6125em;
 }
 
-h5 {
+h3 {
 	font-size: 1.5em;
 }
 
+h4 {
+	font-size: 1.37125em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
 h6 {
-	font-size: 1.48125em;
+	font-size: 1.125em;
 }
 
 hr {
@@ -217,7 +218,7 @@ hr {
 
 p,
 address {
-	line-height: 2;
+	line-height: 1.75;
 	margin: 1.75em 0;
 }
 
@@ -229,7 +230,7 @@ nav a {
 
 blockquote {
 	font-family: Georgia, 'Times New Roman', Times, serif;
-	font-size: 2em;
+	font-size: 1.75em;
 	font-style: italic;
 	line-height: 1.5;
 	margin: 2em 0.75em;
@@ -416,7 +417,7 @@ section.hero .slideshow li input[type="radio"]:checked + article {
 	flex-flow: row wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
-	gap: 2em;
+	gap: 1.5em;
 }
 
 .content > *:first-child + p,
@@ -426,7 +427,7 @@ section.hero .slideshow li input[type="radio"]:checked + article {
 
 .content > time:first-child + p,
 .content > time:first-child + header {
-	flex: 1 1 calc(100px - 90px - 2em);
+	flex: 1 1 calc(100px - 72px - 1.5em);
 }
 
 section.function-hall picture {
@@ -477,8 +478,8 @@ section.meetings time {
 	flex-flow: column nowrap;
 	justify-content: stretch;
 	aspect-ratio: 1;
-	flex: 1 1 90px;
-	max-width: 90px;
+	flex: 1 1 72px;
+	max-width: 72px;
 }
 
 section.meetings time span {
@@ -643,7 +644,7 @@ article.bearer > section.photo > img {
 /**/
 /* } */
 
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 740px) {
 	section.news ul,
 	footer div.wrapper {
 		display: block;
