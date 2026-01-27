@@ -45,7 +45,6 @@ if (empty($posts))
 					?>" />
 				</section>
 			</article>
-			<hr />
 		</li>
 		<?php endforeach ?>
 	</ul>

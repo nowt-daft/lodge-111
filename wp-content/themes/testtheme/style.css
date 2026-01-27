@@ -169,6 +169,10 @@ footer {
 	font-size: 1.25em;
 }
 
+footer span.copy {
+	font-size: 0.75em;
+}
+
 h1,
 h2,
 h3,
@@ -419,6 +423,10 @@ section.hero .slideshow li input[type="radio"]:checked + article {
 	margin-top: 0;
 }
 
+.content > time:first-child + p {
+	flex: 1 1 calc(100px - 90px - 2em);
+}
+
 section.function-hall picture {
 	flex-basis: 30%;
 }
@@ -467,8 +475,8 @@ section.meetings time {
 	flex-flow: column nowrap;
 	justify-content: stretch;
 	aspect-ratio: 1;
-	flex: 1 1 15%;
-	max-width: 120px;
+	flex: 1 1 90px;
+	max-width: 90px;
 }
 
 section.meetings time span {
@@ -554,11 +562,6 @@ article.office > ul {
 
 article.office > ul > li {
 	display: flex;
-	flex-flow: column nowrap;
-	gap: 0;
-	justify-content: flex-start;
-	align-items: flex-start;
-
 	flex: 1 1 320px;
 	margin: 1em 0;
 }

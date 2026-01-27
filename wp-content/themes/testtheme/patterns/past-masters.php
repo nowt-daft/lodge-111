@@ -41,7 +41,6 @@ if (empty($posts))
 				</section>
 				<?php endif ?>
 			</article>
-			<hr />
 		</li>
 		<?php endforeach ?>
 	</ul>
