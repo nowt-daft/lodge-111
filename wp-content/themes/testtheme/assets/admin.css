@@ -1,3 +1,10 @@
 img {
 	max-width: 100%;
 }
+
+#menu-dashboard,
+#menu-posts,
+#menu-pages,
+#menu-comments {
+	display: none;
+}

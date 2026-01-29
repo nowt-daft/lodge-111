@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+SINGLE=${1:-"custom"}
+PLURAL=${2:-$SINGLE"s"}
+SLUG=${3:-"$PLURAL"}
+
+if ! [[ $PWD = */bin ]]; then
+	echo "NOT CALLED FROM THE bin/ DIRECTORY."
+	exit 1
+fi
+
+cd ..
+
+mkdir -p types/
+touch types/$SINGLE.php
+
+SOURCE="<?php
+/**
+ * TYPE: $SINGLE
+ * PLURAL: $PLURAL
+ * SLUG: /$SLUG
+ */
+ 
+require_once __DIR__ . '/../includes.php';
+
+// DEFINITION:
+add_action(
+	'init',
+	function() {
+		register_post_type(
+			'$PLURAL',
+			[
+				'labels'        => generate_post_labels(
+					'$SINGLE',
+					'$PLURAL',
+				),
+				'public'        => true,
+				'supports'      => ['title'],
+				'menu_icon'     => 'dashicons-',
+				'menu_position' => 0,
+				'has_archive'   => true,
+				'rewrite'       => ['slug' => '$SLUG'],
+			]
+		);
+		/**
+		 * BASIC META REGISTRATION (if needed)
+		register_meta(
+			'$PLURAL',
+			'$PLURAL-meta-key',
+			[
+				'type' => 'integer?',
+				'single' => true,
+				'sanitize_callback' => 'absint?',
+				'auth_callback' => function() {
+					return current_user_can('edit_posts');
+				}
+			]
+		);
+		*/
+	}
+);
+
+// ADMIN BOXES:
+add_action(
+	'add_meta_boxes',
+	function() {
+		add_meta_box(
+			'$PLURAL-meta-key',
+			'INSERT TITLE HERE',
+			function(\$post) {
+				\$meta = get_data(\$post);
+				\$key = '$PLURAL-meta-key';
+				\$value = \$meta[\$key] ?? '';
+				?>
+				<input
+					type=\"text\"
+					name=\"<?php echo \$key ?>\"
+					value=\"<?php echo \$value ?>\"
+				/>
+				<?php
+			},
+			'$PLURAL',
+			'normal', // side, etc.
+			'high', // <- priority
+		);
+		// ADD MORE BOXES HERE
+	}
+);
+
+// SAVE:
+add_action(
+	'save_post',
+	function(\$id) {
+		\$type = get_post_type();
+
+		if (
+			\$type != '$PLURAL'
+		) return;
+
+		\$key = \$type . '-meta-key';
+
+		// IMAGE =>
+		upload_image(\$id, \$key);
+
+		// REGULAR =>
+		\$value = \$_POST[\$key] ?? '';
+
+		if (
+			empty(\$value)
+		) return;
+
+		update_post_meta(
+			\$id,
+			\$key,
+			\$value
+		);
+	}
+);
+"
+
+echo "$SOURCE" > types/$SINGLE.php
+echo "FILE SAVED TO => types/$SINGLE.php"

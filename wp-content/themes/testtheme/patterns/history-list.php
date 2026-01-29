@@ -9,7 +9,7 @@
 $posts = get_posts([
 	"post_type" => "history",
 	"meta_key" => 'history_chapter_order',
-	"orderby" => 'meta_value',
+	"orderby" => 'meta_value_num',
 	"order" => 'ASC',
 	"posts_per_page" => -1
 ]);
