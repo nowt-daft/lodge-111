@@ -18,6 +18,8 @@ if (empty($posts))
 
 <article class="office">
 	<h1>Office Bearers</h1>
+	<img class="hero" src="/wp-content/themes/testtheme/assets/img/bearers.jpeg" />
+
 	<ul>
 		<?php foreach ($posts as $post) : ?>
 		<li>

@@ -550,6 +550,11 @@ article.history-chapter > nav > a.next {
 	margin: 1em 0 0 auto;
 }
 
+article.office img.hero {
+	max-height: unset;
+	margin: 2em 0;
+}
+
 article.office > ul {
 	display: flex;
 	flex-flow: row wrap;
