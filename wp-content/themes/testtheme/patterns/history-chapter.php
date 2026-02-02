@@ -53,6 +53,9 @@ if (!is_null($next_chapter))
 			&lt; Previous
 		</a>
 		<?php endif ?>
+		<a href="/history">
+			Top &uarr;
+		</a>
 		<?php if (!empty($next_name)) : ?>
 		<a
 			class="next"
